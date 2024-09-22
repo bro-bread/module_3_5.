@@ -1,13 +1,10 @@
-def get_multiplied_digits(number):
-    s = []
-    h = list(str(number))
-    l = len(h)
-    n = 1
-    for i in range(0,l):
-        s.append(int(h[i]))
-        n = 1
-        for el in s:
-            n *= el
-    print(n)
-
-get_multiplied_digits(123456789)
+def gmd(number):
+    str_number = str(number)
+    first = int(str_number[0])
+    ttt = len(str_number)
+    if ttt > 1:
+        first =  first * gmd(int(str_number[1:]))
+        return first
+    else:
+        return first
+print(gmd(285))
